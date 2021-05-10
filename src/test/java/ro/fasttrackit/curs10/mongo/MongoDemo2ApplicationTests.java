@@ -1,4 +1,4 @@
-package ro.fasttrackit.curs9.mongo;
+package ro.fasttrackit.curs10.mongo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

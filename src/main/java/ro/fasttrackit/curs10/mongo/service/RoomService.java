@@ -1,9 +1,9 @@
-package ro.fasttrackit.curs9.mongo.service;
+package ro.fasttrackit.curs10.mongo.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ro.fasttrackit.curs9.mongo.model.entity.Room;
-import ro.fasttrackit.curs9.mongo.repository.RoomRepository;
+import ro.fasttrackit.curs10.mongo.model.entity.RoomEntity;
+import ro.fasttrackit.curs10.mongo.repository.RoomRepository;
 
 import java.util.List;
 
@@ -14,9 +14,13 @@ import static java.util.Optional.ofNullable;
 public class RoomService {
     private final RoomRepository roomRepository;
 
-    public List<Room> getAll(String number) {
+    public List<RoomEntity> getAll(String number) {
         return ofNullable(number)
                 .map(roomRepository::findByRoomNumber)
                 .orElseGet(roomRepository::findAll);
+    }
+
+    public RoomEntity addRoom(RoomEntity room) {
+        return roomRepository.save(room);
     }
 }

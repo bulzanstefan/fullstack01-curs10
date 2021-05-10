@@ -1,4 +1,4 @@
-package ro.fasttrackit.curs9.mongo.model.entity;
+package ro.fasttrackit.curs10.mongo.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,13 +12,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Room {
+public class RoomEntity {
     @Id
     private String id;
 
     private String roomNumber;
 
-    public Room(String roomNumber) {
+    private RoomFacilitiesEntity facilities;
+
+    public RoomEntity(String roomNumber) {
         this.roomNumber = roomNumber;
     }
 }
